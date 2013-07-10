@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jdyer@voxeolabs.com"]
   spec.description   = "Look up ip's and tags from instance ID"
   spec.summary       = "Look up ip's and tags from instance ID"
-  spec.homepage      = ""
+  spec.homepage      = "http://rubygems.org/gems/ilookup"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
