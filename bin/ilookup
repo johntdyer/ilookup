@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require "fog"
+
+
+fog = Fog::Compute.new(provider: 'AWS')
+instance =  fog.servers.get(ARGV[0])
+puts "Public IP:\t #{instance.public_ip_address}"
+puts "Private IP:\t #{instance.private_ip_address}"
+puts "Tags:\t #{instance.tags}"
