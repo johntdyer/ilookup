@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 require "fog"
 
+unless File.exists?(File.expand_path('~/.fog'))
+  puts "Missing ~/.fog config file"
+  exit 1
+end
 
 fog = Fog::Compute.new(provider: 'AWS')
 instance =  fog.servers.get(ARGV[0])
