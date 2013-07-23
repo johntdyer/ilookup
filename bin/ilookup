@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require "fog"
 
-unless File.exists?(File.expand_path('~/.fog'))
+unless File.exists?(File.join(Dir.home,".fog"))
   puts "Missing ~/.fog config file"
   exit 1
 end
