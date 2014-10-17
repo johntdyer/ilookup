@@ -8,6 +8,11 @@ end
 
 fog = Fog::Compute.new(provider: 'AWS')
 instance =  fog.servers.get(ARGV[0])
-puts "Public IP:\t #{instance.public_ip_address}"
-puts "Private IP:\t #{instance.private_ip_address}"
-puts "Tags:\t #{instance.tags}"
+
+if instance.nil?
+  puts "Instance not found"
+else
+  puts "Public IP:\t #{instance.respond_to?(:public_ip_address) ? instance.public_ip_address : "n/a"}" if
+  puts "Private IP:\t #{instance.private_ip_address}"
+  puts "Tags:\t #{instance.tags}"
+end
